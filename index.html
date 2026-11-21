@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#26364a">
+  <title>Volver a conocernos</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-theme="rain" data-setting="window-rain">
+  <div class="stage-piece stage-window" aria-hidden="true">
+    <div class="window-frame">
+      <div class="window-view">
+        <span class="window-moon">☾</span>
+        <span class="window-stars">✦　·　✧　·　✦</span>
+        <span class="window-cloud cloud-one"></span>
+        <span class="window-cloud cloud-two"></span>
+        <span class="window-rain-drops">
+          <i></i><i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i><i></i>
+        </span>
+        <span class="window-mountains"></span>
+        <span class="window-horizon"></span>
+        <span class="window-tree tree-left">🌲</span>
+        <span class="window-tree tree-center">🌲</span>
+        <span class="window-tree tree-right">🌳</span>
+        <span class="window-bush bush-left">🌿</span>
+        <span class="window-bush bush-right">🌿</span>
+        <span class="window-meadow">✿　✾　✿　✾</span>
+        <span class="window-meadow-flowers">
+          <span class="window-wildflower wildflower-left">🌼</span>
+          <span class="window-wildflower wildflower-center">🌸</span>
+          <span class="window-wildflower wildflower-right">🌼</span>
+          <span class="window-bee">🐝</span>
+        </span>
+        <span class="window-glass-reflection"></span>
+        <span class="window-grid"></span>
+      </div>
+    </div>
+    <div class="window-sill"></div>
+    <div class="window-lamp" aria-hidden="true"></div>
+    <div class="curtain curtain-left"></div>
+    <div class="curtain curtain-right"></div>
+  </div>
+
+  <div class="stage-piece stage-book" aria-hidden="true">
+    <div class="open-book">
+      <div class="book-page page-left"></div>
+      <div class="book-page page-right"></div>
+      <div class="book-spine"></div>
+    </div>
+  </div>
+
+  <div class="stage-piece stage-board" aria-hidden="true">
+    <div class="chalkboard">
+      <span class="board-doodle doodle-flower">✿</span>
+      <span class="board-doodle doodle-star">✦</span>
+      <span class="board-doodle doodle-heart">♡</span>
+      <div class="chalk-line"></div>
+    </div>
+  </div>
+
+  <div class="stage-piece stage-phone" aria-hidden="true">
+    <div class="phone-illustration">
+      <div class="phone-speaker"></div>
+      <div class="phone-screen">
+        <div class="calendar-heading">Un día para vernos</div>
+        <div class="calendar-dots">☀️　🌷　☀️</div>
+        <div class="calendar-grid" aria-hidden="true">
+          <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
+          <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
+          <span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stage-piece stage-garden" aria-hidden="true">
+    <span class="garden-sun">☀</span>
+    <span class="garden-flower flower-one">🌼</span>
+    <span class="garden-flower flower-two">🌷</span>
+    <span class="garden-bird">🕊️</span>
+    <div class="garden-hills"></div>
+  </div>
+
+  <div class="curtain-transition" id="curtain-transition" aria-hidden="true">
+    <div class="transition-curtain transition-curtain-left"></div>
+    <div class="transition-curtain transition-curtain-right"></div>
+  </div>
+  <div class="book-transition" id="book-transition" aria-hidden="true">
+    <div class="closing-book">
+      <div class="closing-page closing-page-left"></div>
+      <div class="closing-page closing-page-right"></div>
+      <div class="closing-book-spine"></div>
+    </div>
+  </div>
+
+  <button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="false">
+    ♫ Activar sonidos
+  </button>
+  <p class="sound-status" id="sound-status" role="status" aria-live="polite" hidden></p>
+  <audio id="background-music" loop preload="none"></audio>
+
+  <main class="app-shell">
+    <section class="scene is-active" id="scene-intro" aria-hidden="false">
+      <div class="card intro-card">
+        <h1 class="typed-line" id="typed-line" aria-live="polite"></h1>
+        <button class="button" id="continue-button" type="button" hidden>Continuar</button>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-welcome" aria-hidden="true">
+      <div class="card">
+        <div class="sunny-details" aria-hidden="true">
+          <span>☀️</span><span>🌷</span><span>🕊️</span><span>🌼</span>
+        </div>
+        <h1>Volver a conocernos</h1>
+        <p>Disculpa si esto parece muy apresurado, pero quiero conocerte.</p>
+        <p>Te haré unas preguntas, si no te molesta responderlas.</p>
+        <p>Y recuerda, ante todo: sé sincera. No estamos aquí para juzgar el pasado, sino para mejorar el futuro.</p>
+
+        <aside class="notice">
+          <strong>Antes de empezar:</strong> las respuestas que envíes por esta página me llegarán a mi correo.
+          Puedes saltarte cualquier pregunta.
+        </aside>
+
+        <button class="button" type="button" data-go="scene-notebook">Empezar</button>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-notebook" aria-hidden="true">
+      <div class="card">
+        <p class="eyebrow">Unas páginas de tu historia</p>
+        <div class="book-icon" aria-hidden="true">📖</div>
+        <p class="step-count" id="journal-step"></p>
+        <h1 id="journal-question"></h1>
+        <form id="journal-form">
+          <label for="journal-answer">Tu respuesta</label>
+          <textarea id="journal-answer" rows="5" maxlength="4000" placeholder="Escribe lo que quieras compartir..."></textarea>
+          <div class="button-row">
+            <button class="button" type="submit">Enviar respuesta</button>
+            <button class="button button-secondary" id="skip-journal" type="button">No quisiera responder eso aún</button>
+          </div>
+          <p class="form-status" id="journal-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-favorites" aria-hidden="true">
+      <div class="card">
+        <p class="eyebrow">Una parte de ti</p>
+        <div class="cat-meme" id="cat-meme" aria-label="Meme original de un gato">
+          <span class="cat-face" aria-hidden="true">🐱</span>
+          <span>Yo, esperando tus favoritos...</span>
+        </div>
+        <h1>Ahora, Lau...</h1>
+        <p>Ya sabemos que ambos hemos cambiado durante este tiempo.</p>
+        <p>Dime cuáles son tus favoritos. Puedes responder solo los que quieras.</p>
+
+        <form id="favorites-form">
+          <div class="favorites-grid">
+            <label>Color favorito<input name="Color" autocomplete="off"></label>
+            <label>Comida favorita<input name="Comida" autocomplete="off"></label>
+            <label>Lugar favorito<input name="Lugar" autocomplete="off"></label>
+            <label>Canción favorita<input name="Canción" autocomplete="off"></label>
+            <label>Serie favorita<input name="Serie" autocomplete="off"></label>
+            <label>Película favorita<input name="Película" autocomplete="off"></label>
+            <label>Número favorito<input name="Número" autocomplete="off"></label>
+            <label>Flor favorita<input name="Flor" autocomplete="off"></label>
+            <label>Jugo favorito<input name="Jugo" autocomplete="off"></label>
+            <label>Dulce favorito<input name="Dulce" autocomplete="off"></label>
+            <label>Juego favorito<input name="Juego" autocomplete="off"></label>
+          </div>
+          <div class="button-row">
+            <button class="button" type="submit">Enviar mis respuestas</button>
+            <button class="button button-secondary" id="skip-favorites" type="button">Omitir esta parte</button>
+          </div>
+          <p class="form-status" id="favorites-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-invitation" aria-hidden="true">
+      <div class="card">
+        <p class="eyebrow">Una invitación, sin prisa</p>
+        <div class="phone-icon" aria-hidden="true">📱</div>
+        <h1>Pongámonos al día</h1>
+        <p>Pongámonos al día sobre lo que ha pasado para vernos nuevamente.</p>
+        <p>¿Qué te parece si salimos a comer o a tomar algo?</p>
+        <p>Elige un día. Los demás detalles serán una sorpresa.</p>
+
+        <form id="date-form">
+          <label for="meeting-date">Elige un día</label>
+          <input id="meeting-date" name="meeting-date" type="date" required>
+          <div class="button-row">
+            <button class="button" type="submit">Enviar el día elegido</button>
+            <button class="button button-secondary" id="skip-date" type="button">Lo decidiré después</button>
+          </div>
+          <p class="form-status" id="date-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-share" aria-hidden="true">
+      <div class="card">
+        <p class="eyebrow">También quiero compartir contigo</p>
+        <h1>¿Quieres que te comparta mis respuestas?</h1>
+        <p>Puedes elegir si quieres ver mis gustos también.</p>
+        <div class="button-row centered">
+          <button class="button" id="share-yes" type="button">Sí, quiero recibirlas</button>
+          <button class="button button-secondary" id="share-no" type="button">No, gracias</button>
+        </div>
+        <div class="my-answers" id="my-answers" hidden>
+          <h2>Algunas de las cosas que quizá te preguntes</h2>
+          <p class="form-status" id="my-answers-note"></p>
+          <dl id="my-answers-list"></dl>
+          <div class="my-personal-note" id="my-personal-note"></div>
+          <div class="button-row">
+            <button class="button" id="finish-button" type="button">Continuar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-farewell" aria-hidden="true">
+      <div class="card farewell-card">
+        <div class="sunny-details" aria-hidden="true"><span>🌼</span><span>🕊️</span><span>🌷</span></div>
+        <h1>Eso es todo por ahora, Lau.</h1>
+        <p>Vamos poco a poco y hagámoslo de la manera más tierna y pura.</p>
+        <p class="farewell-line">Escríbeme apenas termines.</p>
+        <button class="button button-secondary" type="button" data-go="scene-intro">Volver al inicio</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
